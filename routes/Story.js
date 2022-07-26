@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const URL = require('../Umri.js');
+
 const router = express.Router();
 const mongoose = require('mongoose');
 const StoryModel = require('../modals/storySchema');
-mongoose.connect(URL)
+mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority")
 
 
 

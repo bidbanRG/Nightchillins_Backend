@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const URL = require('../Umri.js');
+
 //const fileUplaod = require('express-fileupload');
 const router = express.Router(); 
 const mongoose = require('mongoose');
 const PostModel = require('../modals/postSchema');
-mongoose.connect(URL)
+mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority")
 
 
 
