@@ -4,7 +4,7 @@ const cors = require('cors');
 const router = express.Router();
 const mongoose = require('mongoose');
 const StoryModel = require('../modals/storySchema');
-mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority")
+
 
 
 

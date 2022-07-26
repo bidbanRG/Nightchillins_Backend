@@ -2,10 +2,10 @@ const express =  require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const  cors = require('cors');
+require("dotenv").config();
 const app = express();
 const axios = require('axios');
-const URL = require('./NewsApi.js');
-
+mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority")
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload()); 
@@ -31,7 +31,7 @@ app.get('/',(req,res) => {
 
 app.get('/news',async (req,res) => {
      try{
-      const { data } = await axios.get(URL);
+      const { data } = await axios.get(process.env.NEWS_API);
       res.send(data);
     }catch(error){  
       res.send(error.message);
