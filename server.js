@@ -8,7 +8,7 @@ const axios = require('axios');
 mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority",
 {
 useNewUrlParser: true,
-useUnifiedTopology: true,
+useUnifiedTopology: true
 },() => console.log('DB Connected'))
 app.use(express.json());
 app.use(cors());
