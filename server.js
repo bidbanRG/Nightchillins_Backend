@@ -5,7 +5,7 @@ const  cors = require('cors');
 require("dotenv").config();
 const app = express();
 const axios = require('axios');
-mongoose.connect("mongodb+srv://bidesh:bidesh@cluster0.jeepdfc.mongodb.net/Nightchillins?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGOOSE_CONNECTION ,
 {
 useNewUrlParser: true,
 useUnifiedTopology: true
