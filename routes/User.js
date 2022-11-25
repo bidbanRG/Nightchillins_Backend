@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const router = express.Router();
 const mongoose = require('mongoose');
-const UserModel = require('../modals/userSchema');
+const UserModel = require('../models/userSchema');
 
 
 

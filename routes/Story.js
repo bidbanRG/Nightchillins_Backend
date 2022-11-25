@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const router = express.Router();
 const mongoose = require('mongoose');
-const StoryModel = require('../modals/storySchema');
+const StoryModel = require('../models/storySchema');
 
 
 

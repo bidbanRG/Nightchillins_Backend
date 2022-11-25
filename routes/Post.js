@@ -4,7 +4,7 @@ const cors = require('cors');
 //const fileUplaod = require('express-fileupload');
 const router = express.Router(); 
 const mongoose = require('mongoose');
-const PostModel = require('../modals/postSchema');
+const PostModel = require('../models/postSchema');
 
 
 
