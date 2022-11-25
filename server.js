@@ -28,7 +28,7 @@ app.use('/stories',storyRoute);
 
 app.get('/',(req,res) => {
       
-       res.send('ghfjgfh')
+       res.send('Welcome to Nightchillins :)')
 
 })
 
