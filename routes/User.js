@@ -84,7 +84,7 @@ router.post('/changeprofile', async (req,res) => {
       
      const Res = await UserModel.updateOne({_id},{$set:{imgUrl:newimgUrl}})
       
-      res.sendStatus(200);
+      res.sendStatus(201);
    }catch(err){
      res.send(err.message);
    }
