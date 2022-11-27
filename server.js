@@ -2,7 +2,7 @@ const express =  require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const  cors = require('cors');
-require("dotenv").config();
+
 const app = express();
 const axios = require('axios');
 mongoose.connect(process.env.MONGOOSE_CONNECTION ,
