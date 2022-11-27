@@ -6,13 +6,19 @@ const  cors = require('cors');
 const app = express();
 app.use(cors());
 app.options('*', cors())
-// app.use(function(req, res, next) { //allow cross origin requests
-//     res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-//     res.header("Access-Control-Allow-Origin", "https://nightchillins.vercel.app");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.header("Access-Control-Allow-Credentials", true);
-//     next();
-// });
+app.options('/posts', cors());
+app.options('/users/getusers', cors())
+app.options('/users/login', cors())
+app.options('/users/getbyId', cors())
+app.options('/users/changeprofile', cors())
+app.options('/stories', cors())
+app.use(function(req, res, next) { //allow cross origin requests
+    res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+    res.header("Access-Control-Allow-Origin", "https://nightchillins.vercel.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Credentials", true);
+    next();
+});
 const axios = require('axios');
 mongoose.connect(process.env.MONGOOSE_CONNECTION ,
 {
