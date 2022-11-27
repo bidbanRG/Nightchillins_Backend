@@ -4,14 +4,8 @@ const fileUpload = require('express-fileupload');
 const  cors = require('cors');
 
 const app = express();
-const axios = require('axios');
-mongoose.connect(process.env.MONGOOSE_CONNECTION ,
-{
-useNewUrlParser: true,
-useUnifiedTopology: true
-},() => console.log('DB Connected'))
-app.use(express.json());
 app.use(cors());
+app.options('*', cors())
 app.use(function(req, res, next) { //allow cross origin requests
     res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
     res.header("Access-Control-Allow-Origin", "https://nightchillins.vercel.app");
@@ -19,6 +13,14 @@ app.use(function(req, res, next) { //allow cross origin requests
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
+const axios = require('axios');
+mongoose.connect(process.env.MONGOOSE_CONNECTION ,
+{
+useNewUrlParser: true,
+useUnifiedTopology: true
+},() => console.log('DB Connected'))
+app.use(express.json());
+
 app.use(fileUpload()); 
 const PORT = process.env.PORT || 9000;
 
