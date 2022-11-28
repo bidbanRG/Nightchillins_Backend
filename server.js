@@ -13,7 +13,7 @@ app.options('*', cors())
 // app.options('/users/changeprofile', cors())
 // app.options('/stories', cors())
 app.use(function(req, res, next) { //allow cross origin requests
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', `https://nightchillins.vercel.app${req.baseUrl}`);
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
