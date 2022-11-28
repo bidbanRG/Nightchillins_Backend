@@ -4,8 +4,10 @@ const fileUpload = require('express-fileupload');
 const  cors = require('cors');
 
 const app = express();
-app.use(cors());
-app.options('*', cors())
+app.use(cors({
+     origin:"*",
+}));
+// app.options('*', cors())
 // app.options('/posts', cors());
 // app.options('/users/getusers', cors())
 // app.options('/users/login', cors())
@@ -13,7 +15,7 @@ app.options('*', cors())
 // app.options('/users/changeprofile', cors())
 // app.options('/stories', cors())
 app.use(function(req, res, next) { //allow cross origin requests
-    res.setHeader('Access-Control-Allow-Origin', `https://nightchillins.vercel.app${req.baseUrl}`);
+    res.setHeader('Access-Control-Allow-Origin', `*`);
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
